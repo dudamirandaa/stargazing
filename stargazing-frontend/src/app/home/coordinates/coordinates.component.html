@@ -1,0 +1,18 @@
+<form class="form-inline mb-3">
+  <div class="d-flex align-items-center">
+    <div class="col-md-10">
+      <label for="cityNameInput">City name</label>
+      <input type="text" class="form-control" id="cityNameInput" placeholder="City name" [(ngModel)]="cityName" name="cityName">
+      <small class="form-text text-danger" [ngClass]="cityNameVisibility ? 'visible' : 'invisible'">Mandatory field.</small>
+    </div>
+    <div class="col-md-2 p-1">
+      <button type="submit" (click)="search()" class="btn btn-dark">Submit</button>
+    </div>
+  </div>
+</form>
+<app-table-coordinates
+  [ngClass]="tableVisibility ? 'd-inline' : 'd-none'"
+  [desc]="location.desc"
+  [lat]="location.lat"
+  [long]="location.long">
+</app-table-coordinates>
