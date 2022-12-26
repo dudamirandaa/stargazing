@@ -1,11 +1,11 @@
 package project.stargazing.login;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import project.stargazing.LoginResponseDTO;
-import project.stargazing.NewUserDTO;
-import project.stargazing.User;
+import project.stargazing.model.LoginResponseDTO;
+import project.stargazing.model.NewUserDTO;
+import project.stargazing.model.User;
+import project.stargazing.model.LoginRequestDTO;
 
 import javax.validation.Valid;
 import java.util.UUID;

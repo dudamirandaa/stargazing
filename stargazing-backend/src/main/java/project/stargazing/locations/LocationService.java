@@ -2,9 +2,9 @@ package project.stargazing.locations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import project.stargazing.NewLocationDTO;
-import project.stargazing.Location;
-import project.stargazing.User;
+import project.stargazing.model.NewLocationDTO;
+import project.stargazing.model.Location;
+import project.stargazing.model.User;
 import project.stargazing.login.LoginRepository;
 
 import java.util.List;

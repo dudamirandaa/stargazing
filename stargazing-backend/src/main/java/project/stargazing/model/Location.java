@@ -1,8 +1,7 @@
-package project.stargazing;
+package project.stargazing.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -10,13 +9,14 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Table(name = "users")
-public class User {
-
+@RequiredArgsConstructor
+@Table(name = "user_locations")
+public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String username;
-    private String password;
-    private Boolean enabled;
+    private String description;
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private User userId;
 }

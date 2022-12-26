@@ -1,7 +1,7 @@
-package project.stargazing;
+package project.stargazing.model;
 
 import lombok.Data;
-import org.hibernate.validator.constraints.Length;
+import project.stargazing.model.Location;
 
 import javax.validation.constraints.NotNull;
 

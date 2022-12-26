@@ -1,4 +1,4 @@
-package project.stargazing.login;
+package project.stargazing.model;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;

@@ -2,10 +2,9 @@ package project.stargazing.locations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import project.stargazing.Location;
-import project.stargazing.NewLocationDTO;
+import project.stargazing.model.Location;
+import project.stargazing.model.NewLocationDTO;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController

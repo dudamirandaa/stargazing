@@ -1,4 +1,4 @@
-package project.stargazing;
+package project.stargazing.model;
 
 import org.hibernate.validator.constraints.Length;
 
