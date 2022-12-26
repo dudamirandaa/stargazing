@@ -1,10 +1,10 @@
-package project.stargazingbackend;
+package project.stargazing;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class StargazingBackendApplicationTests {
+class StargazingApplicationTests {
 
 	@Test
 	void contextLoads() {

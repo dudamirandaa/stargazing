@@ -1,13 +1,13 @@
-package project.stargazingbackend;
+package project.stargazing;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StargazingBackendApplication {
+public class StargazingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StargazingBackendApplication.class, args);
+		SpringApplication.run(StargazingApplication.class, args);
 	}
 
 }
