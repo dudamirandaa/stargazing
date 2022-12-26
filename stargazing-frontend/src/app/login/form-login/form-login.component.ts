@@ -1,3 +1,4 @@
+import { UserToken } from './../../user-token';
 import { FormLoginService } from './form-login.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -14,27 +15,28 @@ export class FormLoginComponent implements OnInit {
   usernameVisibility = false;
   passwordVisibility = false;
 
-  constructor(private formLoginService: FormLoginService, private http: HttpClient, private router: Router) {}
+  constructor(private formLoginService: FormLoginService, private router: Router) {}
 
   ngOnInit(): void {
   }
 
   login() {
-    if (!this.validateFormLogin()) {
+    if (!this.validateLoginForm()) {
       return;
     }
-    this.http.post('api/login', {username: this.username, password: this.password}).subscribe((resp) => {
-      console.log(resp)
+    this.formLoginService.login(this.username, this.password).subscribe((resp: UserToken) => {
         if(!resp) {
-          alert("We couldn't find this user in your database.")
-        } else {
-          this.router.navigate(['']);
-          alert("Login success.")
+          alert("We couldn't find this user in your database.");
+          return;
         }
+        window.localStorage.setItem('token', resp.token);
+        window.localStorage.setItem('id', resp.userId);
+        this.router.navigate(['']);
+        alert("Login success.")
       });
   }
 
-  validateFormLogin(): boolean {
+  validateLoginForm(): boolean {
     if (!this.username) {
       this.usernameVisibility = true;
       return false;

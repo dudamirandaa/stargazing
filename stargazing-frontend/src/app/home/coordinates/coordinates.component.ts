@@ -1,36 +1,54 @@
 import { Location } from '../../location';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Injectable, OnInit, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-coordinates',
   templateUrl: './coordinates.component.html',
   styleUrls: ['./coordinates.component.scss']
 })
+@Injectable({
+  providedIn: 'root'
+})
 export class CoordinatesComponent implements OnInit {
   cityName = '';
   cityNameVisibility = false;
   tableVisibility = false;
   location: Location = {
-    desc: '',
+    description: '',
     lat: '',
     long: ''
   };
 
   @Output() locationEvent = new EventEmitter<Location>();
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    if (this.route.queryParams) {
+      console.log(this.route.queryParams);
+      this.route.queryParams.subscribe((params) => {
+        if (params['cityName']) {
+          this.cityName = params['cityName'];
+          this.search(this.cityName);
+        }
+      })
+    }
   }
 
-  search() {
+  validateAndSearch() {
     if (!this.validateFormCity()) {
       return;
     }
-    fetch(`https://nominatim.openstreetmap.org/search?q=${this.cityName}&format=json&limit=1`)
+    this.search(this.cityName);
+  }
+
+  search(cityName: string) {
+    fetch(`https://nominatim.openstreetmap.org/search?q=${cityName}&format=json&limit=1`)
       .then(response => response.json())
       .then(data => {
-        this.location.desc = data[0].display_name;
+        console.log(data[0])
+        this.location.description = data[0].display_name;
         this.location.lat = data[0].lat;
         this.location.long = data[0].lon;
         this.tableVisibility = true;

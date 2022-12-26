@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <table class="table table-sm mb-5">
+        <tbody>
+          <tr>
+            <thead>
+              <td class="col-10">Locations</td>
+              <td class="col-2"></td>
+            </thead>
+          </tr>
+          <tr *ngFor="let location of locations">
+            <td class="col-10">{{location.description}}</td>
+            <td class="col-2"><button type="submit" (click)="searchLocation(location.description)" class="btn btn-dark btn-sm">Search</button></td>
+          </tr>
+      </table>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 export interface Location {
-  desc: string;
+  description: string;
   lat: string;
   long: string;
 }

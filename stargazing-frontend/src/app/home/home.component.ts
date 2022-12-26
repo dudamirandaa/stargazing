@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   location: Location = {
-    desc: '',
+    description: '',
     lat: '',
     long: ''
   };
@@ -21,5 +21,4 @@ export class HomeComponent implements OnInit {
   locationEvent(location: Location) {
     this.location = location;
   }
-
 }

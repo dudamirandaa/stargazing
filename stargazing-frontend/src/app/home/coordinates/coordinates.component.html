@@ -6,13 +6,13 @@
       <small class="form-text text-danger" [ngClass]="cityNameVisibility ? 'visible' : 'invisible'">Mandatory field.</small>
     </div>
     <div class="col-md-2 p-1">
-      <button type="submit" (click)="search()" class="btn btn-dark">Submit</button>
+      <button type="submit" (click)="validateAndSearch()" class="btn btn-dark">Submit</button>
     </div>
   </div>
 </form>
 <app-table-coordinates
   [ngClass]="tableVisibility ? 'd-inline' : 'd-none'"
-  [desc]="location.desc"
+  [desc]="location.description"
   [lat]="location.lat"
   [long]="location.long">
 </app-table-coordinates>

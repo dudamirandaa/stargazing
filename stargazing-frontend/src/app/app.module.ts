@@ -14,6 +14,8 @@ import { CoordinatesComponent } from './home/coordinates/coordinates.component';
 import { SkymapComponent } from './skymap/skymap.component';
 import { SafePipe } from './safe-pipe';
 import { TableCoordinatesComponent } from './home/table-coordinates/table-coordinates.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { LocationsComponent } from './locations/locations.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { TableCoordinatesComponent } from './home/table-coordinates/table-coordi
     CoordinatesComponent,
     SkymapComponent,
     SafePipe,
-    TableCoordinatesComponent
+    TableCoordinatesComponent,
+    SignUpComponent,
+    LocationsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,7 @@ import { TableCoordinatesComponent } from './home/table-coordinates/table-coordi
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CoordinatesComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

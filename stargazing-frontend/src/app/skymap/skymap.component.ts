@@ -19,9 +19,8 @@ export class SkymapComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     console.log(this.desc);
-
-      this.url = 'https://slowe.github.io/VirtualSky/embed?lat=' + this.lat + '&long=' + this.long + '&projection=PROJECTION&constellations=CONSTELLATIONS&meteorshowers=METEORSHOWERS&showstarlabels=SHOWSTLABELS&live=LIVE&az=AZIMUTH';
-      console.log(this.url);
+    this.buildURL();
+    console.log(this.url);
 
   }
 
@@ -31,11 +30,17 @@ export class SkymapComponent implements OnInit, OnChanges {
       this.desc = changes['desc'].currentValue;
     }
     console.log(this.desc);
-
-      this.url = 'https://slowe.github.io/VirtualSky/embed?lat=' + this.lat + '&long=' + this.long + '&projection=PROJECTION&constellations=CONSTELLATIONS&meteorshowers=METEORSHOWERS&showstarlabels=SHOWSTLABELS&live=LIVE&az=AZIMUTH';
-      console.log(this.url);
+    this.buildURL();
+    console.log(this.url);
 
   }
 
+  buildURL() {
+    this.url = 'https://slowe.github.io/VirtualSky/embed?latitude=' + this.lat + '&longitude=' + this.long + '&projection=PROJECTION&constellations=CONSTELLATIONS&meteorshowers=METEORSHOWERS&showstarlabels=SHOWSTLABELS&live=LIVE&az=AZIMUTH';
+    const iframe = document.getElementById('iframe');
+    if (iframe != null) {
+      iframe.innerHTML= '<iframe width="500" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="' + this.url +  ' | safe" allowTransparency="true"></iframe>';
+    }
+  }
 }
 

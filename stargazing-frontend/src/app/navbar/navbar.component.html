@@ -7,12 +7,12 @@
   <div class="collapse navbar-collapse flex-wrap justify-content-between" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="">My locations</a>
+        <a class="nav-link" routerLink="locations">My locations</a>
       </li>
      </ul>
      <ul class="navbar-nav mr-auto flex-wrap justify-content-between">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="login" routerLinkActive="active">Login</a>
+      <li class="nav-item pointer">
+        <a class="nav-link" (click)="logout()" routerLink="login" routerLinkActive="active">Logout</a>
       </li>
      </ul>
   </div>
