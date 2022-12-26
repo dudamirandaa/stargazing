@@ -34,7 +34,6 @@ public class LoginController {
         if(user != null) {
             token = UUID.randomUUID().toString();
         }
-        System.out.println(user.getId());
         return new LoginResponseDTO(token, user.getId());
     }
 }

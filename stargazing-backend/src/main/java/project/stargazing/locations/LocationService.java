@@ -24,13 +24,9 @@ public class LocationService {
     }
 
     public Long insertLocation(NewLocationDTO newLocation) {
-        System.out.println(newLocation.getUserId());
-        System.out.println(newLocation.getDescription());
         Location location = newLocation.toLocation();
         Optional<User> user = loginRepository.findById(newLocation.getUserId());
         user.ifPresent(location::setUserId);
-        System.out.println(location.getDescription());
-        System.out.println(location.getUserId());
         locationRepository.save(location);
         return location.getId();
     }
