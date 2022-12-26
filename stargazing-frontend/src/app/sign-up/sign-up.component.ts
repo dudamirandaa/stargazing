@@ -27,7 +27,6 @@ export class SignUpComponent implements OnInit {
       return;
     }
     this.signUpService.signUp(this.username, this.password).subscribe((resp: UserToken) => {
-      console.log(resp)
         if(!resp || resp === null) {
           alert("There was an error signing up. Please try again.");
           return;

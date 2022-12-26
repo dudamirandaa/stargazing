@@ -26,7 +26,6 @@ export class CoordinatesComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.route.queryParams) {
-      console.log(this.route.queryParams);
       this.route.queryParams.subscribe((params) => {
         if (params['cityName']) {
           this.cityName = params['cityName'];
@@ -47,7 +46,6 @@ export class CoordinatesComponent implements OnInit {
     fetch(`https://nominatim.openstreetmap.org/search?q=${cityName}&format=json&limit=1`)
       .then(response => response.json())
       .then(data => {
-        console.log(data[0])
         this.location.description = data[0].display_name;
         this.location.lat = data[0].lat;
         this.location.long = data[0].lon;

@@ -1,4 +1,3 @@
-import { Location } from './../../location';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -12,8 +11,6 @@ export class TableService {
   insertLocation(desc: string) {
     const userId = window.localStorage.getItem('id');
     const location = this.createLocation(desc, userId);
-    console.log(location);
-    console.log(userId);
     return this.http.post('api/locations', location);
   }
 

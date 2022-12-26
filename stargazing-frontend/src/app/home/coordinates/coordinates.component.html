@@ -5,7 +5,7 @@
       <input type="text" class="form-control" id="cityNameInput" placeholder="City name" [(ngModel)]="cityName" name="cityName">
       <small class="form-text text-danger" [ngClass]="cityNameVisibility ? 'visible' : 'invisible'">Mandatory field.</small>
     </div>
-    <div class="col-md-2 p-1">
+    <div class="col-md-2 d-flex flex-wrap justify-content-center">
       <button type="submit" (click)="validateAndSearch()" class="btn btn-dark">Submit</button>
     </div>
   </div>

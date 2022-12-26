@@ -1,8 +1,7 @@
 import { CoordinatesComponent } from './../home/coordinates/coordinates.component';
 import { Location } from './../location';
 import { LocationsService } from './locations.service';
-import { Component, Input, OnInit } from '@angular/core';
-import { map } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -21,15 +20,11 @@ export class LocationsComponent implements OnInit {
 
   ngOnInit(): void {
     this.listLocations();
-    console.log(this.locations);
   }
 
   async listLocations() {
-    console.log("lit locations");
     await this.locationsService.getLocations().subscribe((locations) => {
-      console.log(locations);
       this.locations = locations;
-      console.log(this.locations);
     })
   }
 
