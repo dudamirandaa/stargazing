@@ -11,8 +11,8 @@
       </li>
      </ul>
      <ul class="navbar-nav mr-auto flex-wrap justify-content-between">
-      <li class="nav-item pointer">
-        <a class="nav-link" (click)="logout()" routerLink="login" routerLinkActive="active">Logout</a>
+      <li class="nav-item" *ngIf="isUserLoggedIn()">
+        <a class="nav-link" (click)="logout()" routerLink="login">Logout</a>
       </li>
      </ul>
   </div>

@@ -21,6 +21,5 @@ export class FormLoginService {
   logout() {
     window.localStorage.setItem('token', '');
     window.localStorage.setItem('id', '');
-    console.log("logout");
   }
 }

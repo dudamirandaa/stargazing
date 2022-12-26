@@ -1,7 +1,6 @@
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormLoginComponent } from './login/form-login/form-login.component';
 import { LoginComponent } from './login/login.component';
-import { ListComponent } from './list/list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -34,7 +33,8 @@ const routes: Routes = [
   },
   {
     path: 'locations',
-    component: LocationsComponent
+    component: LocationsComponent,
+    canActivate: [AuthGuardService]
   }
 ];
 
