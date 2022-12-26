@@ -1,9 +1,6 @@
 package project.stargazing.model;
 
 import lombok.Data;
-import org.hibernate.validator.constraints.Length;
-
-import javax.validation.constraints.NotNull;
 
 @Data
 public class LoginResponseDTO {

@@ -11,6 +11,5 @@ import java.util.Optional;
 @Repository
 public interface LocationRepository extends JpaRepository<Location, Long> {
     List<Location> findByUserId(Optional<User> id);
-
     User findOneByUserId(Long userId);
 }

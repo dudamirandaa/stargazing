@@ -1,7 +1,6 @@
 package project.stargazing.model;
 
 import lombok.Data;
-import project.stargazing.model.Location;
 
 import javax.validation.constraints.NotNull;
 
