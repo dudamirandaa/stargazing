@@ -32,5 +32,3 @@ export class SkymapComponent implements OnInit, OnChanges {
     }
   }
 }
-
-// src="http://slowe.github.io/VirtualSky/embed?&projection=lambert&constellations=true&gridlines_az=true&gridlines_eq=true&az=320.3791587091725"
