@@ -30,7 +30,7 @@ The frontend was developed using Angular Framework with Typescript, HTML and CSS
 - Sky map:
   - at the skymap folder, SkymapComponent has the responsibility to build the URLs to plot the graphs when searching
 
-The backend was develop using Spring Framework with Java. The files are inside stargazing-frontend/src/app and t
+The backend was develop using Spring Framework with Java. The files are inside stargazing-backend/src/main/java/project/startgazing and the responsibilities are organized as follows:
 
 - Locations:
   - at the locations folder, LocationRepository extends JpaRepository to handle queries in the database
