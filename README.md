@@ -23,10 +23,10 @@ The frontend was developed using Angular Framework with Typescript, HTML and CSS
   - at the locations folder, LocationsService communicates with the backend to list the locations the current user has saved
   - LocationsComponent is responsible for communicating with the service in order to list the locations and to redirect to the homepage and show results once the search button has been clicked for a certain location
 - Table coordinates:
-  - at the table-coordinates folder, TableService communicates with the backend to insert a new location in the database
+  - at the home/table-coordinates folder, TableService communicates with the backend to insert a new location in the database
   - TableCoordinatesComponent handles messages for success and error when inserting a location in the database
 - Coordinates:
-  - in the coordinates folder, CoordinatesComponent validates the search form and communicates with the Nominatim API to get the latitude and longitude of the given location
+  - in the home/coordinates folder, CoordinatesComponent validates the search form and communicates with the Nominatim API to get the latitude and longitude of the given location
 - Sky map:
   - at the skymap folder, SkymapComponent has the responsibility to build the URLs to plot the graphs when searching
 
