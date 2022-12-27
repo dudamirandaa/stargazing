@@ -1,6 +1,6 @@
 # STARGAZING
 
-#### Video Demo: <URL HERE>
+#### Video Demo: https://youtu.be/Ye8PPmrdgkw
 
 #### Description:
 
