@@ -9,7 +9,7 @@ This project is a website where users can check out a map of the night sky from 
 - OpenStreetMap Nominatim API: https://nominatim.org/
 - VirtualSky API: https://slowe.github.io/VirtualSky/
 
-The frontend was developed using Angular Framework with Typescript, HTML and CSS. The responsibilities are organized as follows:
+The frontend was developed using Angular Framework with Typescript, HTML and CSS. The files are inside stargazing-frontend/src/app and the responsibilities are organized as follows:
 
 - Login:
   - at source, AuthService is used to set a token in the browser's local storage to keep the user logged in
@@ -30,7 +30,7 @@ The frontend was developed using Angular Framework with Typescript, HTML and CSS
 - Sky map:
   - at the skymap folder, SkymapComponent has the responsibility to build the URLs to plot the graphs when searching
 
-The backend was develop using Spring Framework with Java
+The backend was develop using Spring Framework with Java. The files are inside stargazing-frontend/src/app and t
 
 - Locations:
   - at the locations folder, LocationRepository extends JpaRepository to handle queries in the database
