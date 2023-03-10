@@ -17,7 +17,7 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @PostMapping("signup")
+    @PostMapping("/signup")
     public LoginResponseDTO signUp(@RequestBody @Valid NewUserDTO newUserDTO) {
         String token = "";
         Long userId = loginService.insertUser(newUserDTO);

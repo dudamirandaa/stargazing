@@ -19,15 +19,16 @@ public class LocationService {
     private LoginRepository loginRepository;
 
     public List<Location> listLocations(Long userId) {
+        // TODO: switch user for userId in Location entity
         Optional<User> user = loginRepository.findById(userId);
         return locationRepository.findByUserId(user);
     }
 
-    public Long insertLocation(NewLocationDTO newLocation) {
+    public Location insertLocation(NewLocationDTO newLocation) {
         Location location = newLocation.toLocation();
         Optional<User> user = loginRepository.findById(newLocation.getUserId());
         user.ifPresent(location::setUserId);
         locationRepository.save(location);
-        return location.getId();
+        return location;
     }
 }
