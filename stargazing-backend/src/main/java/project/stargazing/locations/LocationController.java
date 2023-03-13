@@ -8,6 +8,7 @@ import project.stargazing.model.Location;
 import project.stargazing.model.LocationDetailsDTO;
 import project.stargazing.model.NewLocationDTO;
 
+import javax.transaction.Transactional;
 import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,8 +22,7 @@ public class LocationController {
 
     @GetMapping("/{userId}")
     public ResponseEntity<List<LocationDetailsDTO>> getLocations(@PathVariable Long userId) {
-        List<LocationDetailsDTO> locations = locationService.listLocations(userId).stream().map(LocationDetailsDTO::new).collect(Collectors.toList());
-        return ResponseEntity.ok(locations);
+        return ResponseEntity.ok(locationService.listLocations(userId));
     }
 
     @PostMapping
@@ -30,5 +30,12 @@ public class LocationController {
         Location createdLocation = locationService.insertLocation(newLocationDTO);
         URI uri = uriComponentsBuilder.path("/locations/{id}").buildAndExpand(createdLocation.getId()).toUri();
         return ResponseEntity.created(uri).body(new LocationDetailsDTO(createdLocation));
+    }
+
+    // TODO: create delete, update and detail methods
+
+    @GetMapping("/{locationId}/{userId}")
+    public ResponseEntity<LocationDetailsDTO> detailLocation(@PathVariable Long locationId, @PathVariable Long userId) {
+        return ResponseEntity.ok(locationService.detailLocation(locationId, userId));
     }
 }
