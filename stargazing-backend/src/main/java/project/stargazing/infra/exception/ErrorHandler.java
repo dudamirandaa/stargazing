@@ -1,4 +1,4 @@
-package project.stargazing.infra;
+package project.stargazing.infra.exception;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -22,4 +22,6 @@ public class ErrorHandler {
         List<FieldError> errors = exception.getFieldErrors();
         return ResponseEntity.badRequest().body(errors);
     }
+
+    // TODO: add formatting for response body
 }
