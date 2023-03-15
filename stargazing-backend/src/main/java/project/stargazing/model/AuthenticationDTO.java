@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.Length;
 import javax.validation.constraints.NotNull;
 
 @Data
-public class LoginRequestDTO {
+public class AuthenticationDTO {
     @NotNull
     @Length(max = 50)
     private String username;

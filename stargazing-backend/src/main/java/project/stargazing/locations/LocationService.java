@@ -6,9 +6,8 @@ import project.stargazing.model.LocationDetailsDTO;
 import project.stargazing.model.NewLocationDTO;
 import project.stargazing.model.Location;
 import project.stargazing.model.User;
-import project.stargazing.login.LoginRepository;
+import project.stargazing.login.UserRepository;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -19,7 +18,7 @@ public class LocationService {
     @Autowired
     private LocationRepository locationRepository;
     @Autowired
-    private LoginRepository loginRepository;
+    private UserRepository loginRepository;
 
     public List<LocationDetailsDTO> listLocations (Long userId) {
         // TODO: switch user for userId in Location entity
