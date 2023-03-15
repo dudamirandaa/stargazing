@@ -4,11 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import project.stargazing.infra.security.JWTdetailsDTO;
+import project.stargazing.infra.security.TokenService;
 import project.stargazing.model.AuthenticationDTO;
+import project.stargazing.model.User;
 
 import javax.validation.Valid;
 
@@ -19,14 +23,14 @@ public class AuthenticationController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Autowired
+    private TokenService tokenService;
+
     @PostMapping
     public ResponseEntity logIn(@RequestBody @Valid AuthenticationDTO authenticationDTO) {
-        try {
-            UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(authenticationDTO.getUsername(), authenticationDTO.getPassword());
-            authenticationManager.authenticate(token);
-        } catch (Exception exception) {
-            exception.printStackTrace();
-        }
-        return ResponseEntity.ok().build();
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(authenticationDTO.getUsername(), authenticationDTO.getPassword());
+        Authentication authentication = authenticationManager.authenticate(authenticationToken);
+        String jwtToken = tokenService.generateToken((User) authentication.getPrincipal());
+        return ResponseEntity.ok(new JWTdetailsDTO(jwtToken));
     }
 }
