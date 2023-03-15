@@ -26,6 +26,8 @@ public class AuthenticationController {
     @Autowired
     private TokenService tokenService;
 
+    // TODO: implement sign up
+
     @PostMapping
     public ResponseEntity logIn(@RequestBody @Valid AuthenticationDTO authenticationDTO) {
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(authenticationDTO.getUsername(), authenticationDTO.getPassword());
